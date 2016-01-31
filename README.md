@@ -5,5 +5,5 @@ Implements Forward and Inverse kinematics equations.
 Runs smoothly on Chrome
 (just don't try IE)
 
-A project by Mitropoylos Spiros,
+A project by Mitropoylos Spiros made completely from scratch,
 contact me at: cont@eyrhka.gr
