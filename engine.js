@@ -177,22 +177,22 @@ FK2DofPos = function(theta1, theta2)
 IK2DofThetas = function(l1, l2, px, py)
 {
 	c2 = (    ( Math.pow(px, 2)+ Math.pow(py, 2) - (Math.pow(l1, 2)) - (Math.pow(l2,2)) ) /  (2*l1*l2)   );
-	s2 = Math.sqrt(1 - (Math.pow(c2,2)));
 	
+	s2 = Math.sqrt(1 - (Math.pow(c2,2)));
 	theta2 = Math.atan2(s2, c2);
 	theta1 = Math.atan2( -(l2*s2*px) + py*(l1+l2*c2) , l2*s2*py + px*(l1+l2*c2));
+	
+	if(theta1*(180.0/Math.PI) < 0)
+	{
+		s2 = Math.sqrt(1 - (Math.pow(c2,2)))*(-1);
+		theta2 = Math.atan2(s2, c2);
+		theta1 = Math.atan2( -(l2*s2*px) + py*(l1+l2*c2) , l2*s2*py + px*(l1+l2*c2));
+	}
 
 	return {
 		'theta1' : theta1*(180.0/Math.PI), /// Convert to degrees
 		'theta2' : theta2*(180.0/Math.PI)	
 	}
-	
-	//document.getElementById("angle1Range").value= Math.round((theta1*(180/Math.PI)));
-	//document.getElementById("angle1Range-out").innerHTML= Math.round((theta1*(180/Math.PI))).toString();
-	
-	//document.getElementById("angle2Range").value= Math.round((theta2*(180/Math.PI)));
-	//document.getElementById("angle2Range-out").innerHTML= Math.round((theta2*(180/Math.PI))).toString();
-	
 }
 
 function RunIK()
