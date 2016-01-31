@@ -1,3 +1,12 @@
+drawOuterRange = function()
+{
+	ctx.lineWidth = 1;
+	ctx.strokeStyle = "#D3D3D3";	
+	ctx.beginPath();
+	ctx.arc(baseTop.x, baseTop.y, arm.width*2, 0, 2*Math.PI, false);
+	ctx.stroke();
+}
+
 drawJoint = function(x,y){
 	ctx.lineWidth = 1.5;
 	ctx.strokeStyle = "#999966";

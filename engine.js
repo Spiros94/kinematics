@@ -65,6 +65,7 @@ render = function()
 	drawBase();		// Draw the base object
 	drawArm();
 	drawCursorCoord();
+	drawOuterRange();
 	
 	if(IKrun == true)
 	{
