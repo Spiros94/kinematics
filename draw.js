@@ -1,3 +1,18 @@
+drawInnerRange = function()
+{
+	var l1 = arm.width;
+	var l2 = arm.width;
+	var maxTheta2 = parseFloat(document.getElementById("angle2Range").max);
+	
+	var radious = CalcInnerRange(l1, l2, maxTheta2);
+	
+	ctx.lineWidth = 2;
+	ctx.strokeStyle = "#D3D3D3";	
+	ctx.beginPath();
+	ctx.arc(baseTop.x, baseTop.y, radious, 0, 2*Math.PI, true);
+	ctx.stroke();
+}
+
 drawOuterRange = function()
 {
 	ctx.lineWidth = 1;

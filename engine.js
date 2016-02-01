@@ -46,8 +46,7 @@ var arm = {
 	'x': 0,
 	'y': 0,
 	'width': 100,
-	'height': 3,
-	'rotation': 0	
+	'height': 3	
 }
 
 lineArmDefines = function()
@@ -66,6 +65,7 @@ render = function()
 	drawArm();
 	drawCursorCoord();
 	drawOuterRange();
+	drawInnerRange();
 	
 	if(IKrun == true)
 	{
@@ -316,7 +316,15 @@ function TripleArrayPush(array, itm)
 	return local;
 }
 
-
+function CalcInnerRange(l1, l2, maxTheta2)
+{
+	maxTheta2 = maxTheta2 * (Math.PI/180.0); /// convert to Rads
+	
+	var h1 = l1 - (Math.cos(Math.PI-Math.abs(maxTheta2))*l2 );
+	var w1 = Math.sin(Math.PI-Math.abs(maxTheta2))*l2;
+	
+	return Math.sqrt(Math.pow(h1,2)+Math.pow(w1, 2));
+}
 
 
 
