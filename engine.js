@@ -69,6 +69,7 @@ render = function()
 	
 	if(IKrun == true)
 	{
+		drawIKtarget();
 		IKtarget.theta1Cache = TripleArrayPush(IKtarget.theta1Cache, IKtarget.theta1Previous);
 		if((IKtarget.theta1Previous == IKtarget.theta1) || IKtarget.theta1Done)
 		{

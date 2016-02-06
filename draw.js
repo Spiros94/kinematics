@@ -1,3 +1,18 @@
+drawIKtarget = function()
+{
+	Px = IKtarget.x + baseTop.x;
+	Py = (300-base.height) - IKtarget.y;
+	
+	ctx.strokeStyle = "#ff0202";
+	ctx.beginPath();
+	ctx.arc(Px, Py, 10, 0, 2*Math.PI);
+	ctx.stroke();
+		
+	ctx.beginPath();
+	ctx.arc(Px, Py, 5, 0, 2*Math.PI);
+	ctx.stroke();	
+}
+
 drawInnerRange = function()
 {
 	var l1 = arm.width;
