@@ -23,17 +23,21 @@ drawInnerRange = function()
 	
 	ctx.lineWidth = 2;
 	ctx.strokeStyle = "#D3D3D3";	
+	ctx.fillStyle = "#eeeeee";	
 	ctx.beginPath();
 	ctx.arc(baseTop.x, baseTop.y, radious, 0, 2*Math.PI, true);
+	ctx.fill();
 	ctx.stroke();
 }
 
 drawOuterRange = function()
 {
 	ctx.lineWidth = 1;
-	ctx.strokeStyle = "#D3D3D3";	
+	ctx.strokeStyle = "#D3D3D3";
+	ctx.fillStyle = "#FFF";	
 	ctx.beginPath();
 	ctx.arc(baseTop.x, baseTop.y, arm.width*2, 0, 2*Math.PI, false);
+	ctx.fill();
 	ctx.stroke();
 }
 
@@ -195,6 +199,7 @@ drawFakeAxis = function()
 	
 	var oldStrokeStyle = ctx.strokeStyle;
 	ctx.strokeStyle = '#d3d3d3';
+	ctx.fillStyle = "#000";
 	ctx.lineWidth = 1;
 	
 	ctx.fillText("+x", baseTop.x+200, baseTop.y + 15);

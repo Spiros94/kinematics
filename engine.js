@@ -60,12 +60,16 @@ lineArmDefines = function()
 render = function()
 {
 	ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+	ctx.fillStyle = "#eeeeee";
+	ctx.fillRect(0,0,500,300);
+	
+	drawOuterRange();
+	drawInnerRange();
+	
 	drawFakeAxis(); // Draw the Axis from the base top center
 	drawBase();		// Draw the base object
 	drawArm();
 	drawCursorCoord();
-	drawOuterRange();
-	drawInnerRange();
 	
 	if(IKrun == true)
 	{
